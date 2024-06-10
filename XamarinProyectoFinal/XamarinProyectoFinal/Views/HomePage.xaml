@@ -1,0 +1,102 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinProyectoFinal.Views.HomePage">
+
+    <ContentPage.Resources>
+        <!-- Estilos -->
+        <!-- Define aquí tus estilos -->
+    </ContentPage.Resources>
+
+    <ScrollView>
+
+        <StackLayout Padding="20">
+
+            <Label Text="Bienestar Estudiantil" FontSize="Large" />
+
+            <!-- Dashboard de estadísticas -->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Tarjeta para el promedio del estado de ánimo -->
+                <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#2196F3" CornerRadius="10" Margin="10">
+                    <StackLayout Padding="10">
+                        <Label Text="Promedios" FontSize="Medium" TextColor="White" HorizontalTextAlignment="Center" />
+                        <Label x:Name="lblAverageMoodFrame" FontSize="Medium" TextColor="White" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                </Frame>
+
+                <!-- Tarjeta para los estados de ánimo felices -->
+                <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#4CAF50" CornerRadius="10" Margin="10">
+                    <StackLayout Padding="10">
+                        <Label Text="Felices" FontSize="Medium" TextColor="White" HorizontalTextAlignment="Center" />
+                        <Label x:Name="lblHappyMoodsFrame" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                </Frame>
+
+                <!-- Tarjeta para los estados de ánimo tristes -->
+                <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="#FFC107" CornerRadius="10" Margin="10">
+                    <StackLayout Padding="10">
+                        <Label Text="Tristes" FontSize="Medium" TextColor="White" HorizontalTextAlignment="Center" />
+                        <Label x:Name="lblSadMoodsFrame" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                </Frame>
+
+                <!-- Tarjeta para los estados de ánimo estresados -->
+                <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="#F44336" CornerRadius="10" Margin="10">
+                    <StackLayout Padding="10">
+                        <Label Text="Estresados" FontSize="Medium" TextColor="White" HorizontalTextAlignment="Center" />
+                        <Label x:Name="lblNeutralMoodsFrame" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                </Frame>
+            </Grid>
+
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Tarjeta para Seguimiento del Estado de Ánimo -->
+                <Frame Grid.Column="0">
+                    <StackLayout>
+                        <Label Text="Seguimiento del Estado de Ánimo" FontSize="Medium" HorizontalTextAlignment="Center" />
+                        <Button Text="Ir" Clicked="OnMoodTrackingButtonClicked" 
+                                BackgroundColor="#2196F3" TextColor="White" 
+                                CornerRadius="5" WidthRequest="100" HeightRequest="40" 
+                                HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Tarjeta para Recursos de Apoyo -->
+                <Frame Grid.Column="1">
+                    <StackLayout>
+                        <Label Text="Recursos de Apoyo" FontSize="Medium" HorizontalTextAlignment="Center" />
+                        <Button Text="Ir" Clicked="OnResourcesButtonClicked" 
+                                BackgroundColor="#2196F3" TextColor="White" 
+                                CornerRadius="5" WidthRequest="100" HeightRequest="40" 
+                                HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+
+            <!-- Tarjeta para Recordatorios de Bienestar -->
+            <Frame>
+                <StackLayout>
+                    <Label Text="Recordatorios de Bienestar" FontSize="Medium" HorizontalTextAlignment="Center" />
+                    <Button Text="Ir" Clicked="OnRemindersButtonClicked" 
+                            BackgroundColor="#2196F3" TextColor="White" 
+                            CornerRadius="5" WidthRequest="100" HeightRequest="40" 
+                            HorizontalOptions="Center"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

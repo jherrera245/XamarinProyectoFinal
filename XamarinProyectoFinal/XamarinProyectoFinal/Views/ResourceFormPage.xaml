@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinProyectoFinal.Views.ResourceFormPage">
+
+    <ContentPage.Resources>
+        <!-- Estilo para Labels -->
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="Large"/>
+            <Setter Property="TextColor" Value="#212121"/>
+            <Setter Property="Margin" Value="0,10,0,5"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+
+        <!-- Estilo para Picker -->
+        <Style TargetType="Picker">
+            <Setter Property="BackgroundColor" Value="#FAFAFA"/>
+            <Setter Property="TextColor" Value="#212121"/>
+            <Setter Property="Margin" Value="0,10,0,10"/>
+            <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        </Style>
+
+        <!-- Estilo para Editor -->
+        <Style TargetType="Editor">
+            <Setter Property="BackgroundColor" Value="#FAFAFA"/>
+            <Setter Property="TextColor" Value="#212121"/>
+            <Setter Property="Margin" Value="0,10,0,10"/>
+            <Setter Property="HeightRequest" Value="100"/>
+            <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        </Style>
+
+        <!-- Estilo para Button -->
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#6200EE"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Margin" Value="0,20,0,0"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+
+            <!-- Entry for Title -->
+            <Label Text="Titulo" />
+            <Frame CornerRadius="10" BorderColor="#2196F3" Padding="5">
+                <Entry x:Name="TitleEntry" Placeholder="Ingresa el titulo" />
+            </Frame>
+
+            <!-- Editor for Content -->
+            <Label Text="Contenido" />
+            <Frame CornerRadius="10" BorderColor="#2196F3" Padding="5">
+                <Editor x:Name="ContentEditor" Placeholder="Ingresa la descripción" HeightRequest="100" />
+            </Frame>
+
+            <!-- Button to pick image -->
+            <Button Text="Seleccionar Imagen" Clicked="OnPickImageClicked" />
+
+            <!-- Image preview -->
+            <Image x:Name="ImagePreview" HeightRequest="200" />
+
+            <!-- Button to save resource -->
+            <Button Text="Guardar" Clicked="OnSaveReourceClicked" />
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

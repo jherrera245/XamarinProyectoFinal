@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinProyectoFinal.Views.ResourcePage">
+
+    <ContentPage.Resources>
+        <!-- Estilo para la tarjeta -->
+        <Style x:Key="CardStyle" TargetType="Frame">
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Margin" Value="10,5"/>
+            <Setter Property="BackgroundColor" Value="White"/>
+            <Setter Property="HasShadow" Value="True"/>
+        </Style>
+
+        <!-- Estilo para el Label dentro de la tarjeta -->
+        <Style x:Key="CardLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="Medium"/>
+            <Setter Property="TextColor" Value="#212121"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+
+        <!-- Estilo para el Label de notas dentro de la tarjeta -->
+        <Style x:Key="CardNotesLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="Small"/>
+            <Setter Property="TextColor" Value="#757575"/>
+            <Setter Property="Margin" Value="5,0,0,0"/>
+        </Style>
+
+        <!-- Estilo para el botón -->
+        <Style x:Key="PrimaryButtonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#6200EE"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Margin" Value="10,20,10,0"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <ListView x:Name="resourceListView" ItemSelected="OnItemSelected" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Style="{StaticResource CardStyle}">
+                                <StackLayout Orientation="Horizontal" Spacing="10">
+                                    <Image Source="{Binding ImageSource}" HeightRequest="80" WidthRequest="80" Aspect="AspectFill" />
+                                    <StackLayout VerticalOptions="CenterAndExpand">
+                                        <Label Text="{Binding Title}" Style="{StaticResource CardLabelStyle}" />
+                                        <Label Text="{Binding Content}" Style="{StaticResource CardNotesLabelStyle}" LineBreakMode="TailTruncation" MaxLines="2" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Agregar Recurso" Clicked="OnAddButtonClicked" Style="{StaticResource PrimaryButtonStyle}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

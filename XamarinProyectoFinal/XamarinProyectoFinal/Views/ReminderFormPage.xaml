@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinProyectoFinal.Views.ReminderFormPage">
+
+    <ContentPage.Resources>
+        <!-- Estilo para Labels -->
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="Large"/>
+            <Setter Property="TextColor" Value="#212121"/>
+            <Setter Property="Margin" Value="0,10,0,5"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+
+        <!-- Estilo para Picker -->
+        <Style TargetType="Picker">
+            <Setter Property="BackgroundColor" Value="#FAFAFA"/>
+            <Setter Property="TextColor" Value="#212121"/>
+            <Setter Property="Margin" Value="0,10,0,10"/>
+            <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        </Style>
+
+        <!-- Estilo para Editor -->
+        <Style TargetType="Editor">
+            <Setter Property="BackgroundColor" Value="#FAFAFA"/>
+            <Setter Property="TextColor" Value="#212121"/>
+            <Setter Property="Margin" Value="0,10,0,10"/>
+            <Setter Property="HeightRequest" Value="100"/>
+            <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        </Style>
+
+        <!-- Estilo para Button -->
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#6200EE"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Margin" Value="0,20,0,0"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <StackLayout Padding="20">
+        <!-- Título de la página -->
+        <Label Text="Configurar Recordatorios" HorizontalOptions="Center" TextColor="#6200EE" FontAttributes="Bold" />
+
+        <!-- Selector de tiempo -->
+        <Label Text="Hora del Recordatorio" />
+        <Frame CornerRadius="10" BorderColor="#2196F3" Padding="5">
+            <TimePicker x:Name="timePicker" Format="HH:mm" />
+        </Frame>
+
+        <!-- Entrada de mensaje -->
+        <Label Text="Mensaje del Recordatorio" />
+        <Frame CornerRadius="10" BorderColor="#2196F3" Padding="5">
+            <Entry x:Name="messageEntry" Placeholder="Ingresa el mensaje del recordatorio" />
+        </Frame>
+
+        <!-- Botón para guardar -->
+        <Button Text="Guardar Recordatorio" Clicked="OnSaveReminderClicked" />
+    </StackLayout>
+</ContentPage>
